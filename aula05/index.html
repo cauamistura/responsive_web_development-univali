@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 05</title>
+</head>
+<body>
+    <!-- (1) Mensagem 'Olá Mundo' -->
+    <h1 id="olaMundo"></h1>
+
+    <!-- (2) Saída de soma de 2 inteiros -->
+    <p id="somaOutput"></p>
+
+    <!-- (3) Altera a propriedade de um elemento por id -->
+    <button id="alterarPorId">Alterar por ID</button>
+
+    <!-- (4) Altere a propriedade de um elemento por name -->
+    <input type="text" name="alterarPorNome" value="Antes de Alterar" />
+
+    <!-- (5) Altere a propriedade de um elemento por class -->
+    <p class="alterarPorClasse">Antes de Alterar</p>
+
+    <script>
+        // (1) Mensagem 'Olá Mundo'
+        document.getElementById("olaMundo").innerText = "Olá Mundo";
+
+        // (2) Saída de soma de 2 inteiros
+        var numero1 = 5;
+        var numero2 = 3;
+        var soma = numero1 + numero2;
+        document.getElementById("somaOutput").innerText = "A soma de " + numero1 + " e " + numero2 + " é igual a " + soma;
+
+        // (3) Altera a propriedade de um elemento por id
+        document.getElementById("alterarPorId").addEventListener("click", function() {
+            document.getElementById("olaMundo").innerText = "Mensagem alterada por ID";
+        });
+
+        // (4) Altere a propriedade de um elemento por name
+        document.getElementsByName("alterarPorNome")[0].value = "Depois de Alterar";
+
+        // (5) Altere a propriedade de um elemento por class
+        var elementosPorClasse = document.getElementsByClassName("alterarPorClasse");
+        for (var i = 0; i < elementosPorClasse.length; i++) {
+            elementosPorClasse[i].innerText = "Texto alterado por classe";
+        }
+    </script>
+</body>
+</html>
